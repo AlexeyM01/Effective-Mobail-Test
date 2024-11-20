@@ -3,9 +3,9 @@ import os
 
 
 class Book:
-    def __init__(self, book_id, title, author, year, status="в наличии"):
+    def __init__(self, id, title, author, year, status="в наличии"):
         """Инициализация книги как объекта класса"""
-        self.id = book_id
+        self.id = id
         self.title = title
         self.author = author
         self.year = year
@@ -44,7 +44,7 @@ class Library:
 
     def add_book(self, title, author, year):
         """Функция добавления книги в библиотеку"""
-        book = Book(book_id=self.next_id, title=title, author=author, year=year)
+        book = Book(id=self.next_id, title=title, author=author, year=year)
         self.books.append(book)
         self.next_id += 1
         self.save_data()
